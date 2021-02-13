@@ -106,9 +106,9 @@ def run_workflow(
             else docker_image_override
         )
         image_name, image_tag = parse_dockerhub_image_string(docker_image)
-        if not image_exists_on_dockerhub(image_name, image_tag):
-            msg = f'cannot locate {image_name}:{image_tag} on DockerHub'
-            raise RuntimeError(msg)
+        # if not image_exists_on_dockerhub(image_name, image_tag):
+        #     msg = f'cannot locate {image_name}:{image_tag} on DockerHub'
+        #     raise RuntimeError(msg)
 
         for step in workflow_dag:
             log.info(f'attempting to execute DAG step={step}')
